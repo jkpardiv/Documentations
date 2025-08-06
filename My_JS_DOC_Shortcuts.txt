@@ -2,284 +2,253 @@
 String.prototype.toUpperCase() / toLowerCase()
 Converts a string to uppercase or lowercase.
 
-javascript
-
+Example:
 let text = "hello world";
 console.log(text.toUpperCase()); // "HELLO WORLD"
 console.log(text.toLowerCase()); // "hello world"
+
+
 String.prototype.trim()
 Removes whitespace from both ends of a string.
 
-javascript
- 
-#
+Example:
 let text = "  Hello World  ";
 console.log(text.trim()); // "Hello World"
+
 String.prototype.includes()
 Checks if a substring exists within a string.
 
-javascript
- 
-#
+Example:
 let text = "Hello, World!";
 console.log(text.includes("World")); // true
+
+
+
 String.prototype.split()
 Splits a string into an array of substrings based on a delimiter.
 
-javascript
- 
-#
+Example:
 let text = "apple,banana,cherry";
 let fruits = text.split(",");
 console.log(fruits); // ["apple", "banana", "cherry"]
+
 2. Array Methods
 Array.prototype.map()
 Creates a new array by applying a function to each element of an array.
 
-javascript
- 
-#
+Example:
 let numbers = [1, 2, 3, 4];
 let squared = numbers.map(num => num * num);
 console.log(squared); // [1, 4, 9, 16]
+
 Array.prototype.filter()
 Creates a new array with elements that pass a given test.
 
-javascript
- 
-#
+Example:
 let numbers = [1, 2, 3, 4, 5];
 let evenNumbers = numbers.filter(num => num % 2 === 0);
 console.log(evenNumbers); // [2, 4]
+
 Array.prototype.reduce()
 Reduces an array to a single value by applying a function that combines each element.
 
-javascript
- 
-#
+Example:
 let numbers = [1, 2, 3, 4];
 let sum = numbers.reduce((acc, curr) => acc + curr, 0);
 console.log(sum); // 10
+
 Array.prototype.forEach()
 Executes a provided function once for each array element.
 
-javascript
- 
-#
+Example:
 let numbers = [1, 2, 3];
 numbers.forEach(num => console.log(num)); 
 // 1, 2, 3 (printed one by one)
+
 Array.prototype.find()
 Returns the first element in the array that satisfies the provided condition.
 
-javascript
- 
-#
+Example:
 let numbers = [5, 10, 15];
 let found = numbers.find(num => num > 8);
 console.log(found); // 10
+
 3. Object Methods
 Object.keys()
 Returns an array of a given object's own enumerable property names.
 
-javascript
- 
-#
+Example:
 let person = { name: "John", age: 30 };
 console.log(Object.keys(person)); // ["name", "age"]
 Object.values()
 Returns an array of a given object's own enumerable property values.
 
-javascript
- 
-#
+Example:
 let person = { name: "John", age: 30 };
 console.log(Object.values(person)); // ["John", 30]
 Object.assign()
 Copies values from one or more source objects to a target object.
 
-javascript
- 
-#
+Example:
 let person = { name: "John" };
 let additionalInfo = { age: 30 };
 Object.assign(person, additionalInfo);
 console.log(person); // { name: "John", age: 30 }
+
 4. Utility Functions
 parseInt() / parseFloat()
 Converts a string into an integer or a floating-point number.
 
-javascript
- 
-#
+Example:
 console.log(parseInt("10"));     // 10
 console.log(parseFloat("10.5")); // 10.5
+
 isNaN()
 Checks if a value is NaN (Not-a-Number).
 
-javascript
- 
-#
+Example:
 console.log(isNaN("hello")); // true
 console.log(isNaN(123));     // false
+
 Number.isNaN()
 More robust version of isNaN(), only returns true if the value is actually NaN.
 
-javascript
- 
-#
+Example:
 console.log(Number.isNaN(NaN));  // true
 console.log(Number.isNaN(123)); // false
+
 setTimeout() / setInterval()
 Executes a function after a delay (setTimeout) or repeatedly at intervals (setInterval).
 
-javascript
- 
-#
+Example:
 setTimeout(() => { console.log("Hello after 2 seconds"); }, 2000);
 setInterval(() => { console.log("Hello every second"); }, 1000);
+
 clearTimeout() / clearInterval()
 Cancels a previously set setTimeout or setInterval.
 
-javascript
- 
-#
+Example:
 let timerId = setTimeout(() => { console.log("This won't run"); }, 2000);
 clearTimeout(timerId);
+
 5. DOM Manipulation (Web-specific)
+
 document.getElementById()
 Gets an element by its ID.
 
-javascript
- 
-#
+Example:
 let element = document.getElementById("myElement");
 console.log(element);
 document.querySelector()
 Returns the first element that matches a CSS selector.
 
-javascript
- 
-#
+Example:
 let element = document.querySelector(".myClass");
 console.log(element);
 document.createElement()
 Creates a new element.
 
-javascript
- 
-#
+Example:
 let newDiv = document.createElement("div");
 newDiv.innerText = "Hello, World!";
 document.body.appendChild(newDiv);
+
 element.addEventListener()
 Adds an event listener to an element.
 
-javascript
- 
-#
+Example:
 let button = document.getElementById("myButton");
 button.addEventListener("click", function() {
   alert("Button clicked!");
 });
+
 element.style
 Accesses or changes the inline styles of an element.
 
-javascript
- 
-#
+Example:
 let element = document.getElementById("myElement");
 element.style.color = "blue";
+
+
 6. JSON Methods
 JSON.stringify()
-Converts a JavaScript object into a JSON string.
+Converts a Example: object into a JSON string.
 
-javascript
- 
-#
+Example:
 let person = { name: "John", age: 30 };
 let jsonString = JSON.stringify(person);
 console.log(jsonString); // '{"name":"John","age":30}'
 JSON.parse()
-Converts a JSON string back into a JavaScript object.
+Converts a JSON string back into a Example: object.
 
-javascript
- 
-#
+Example:
 let jsonString = '{"name":"John","age":30}';
 let person = JSON.parse(jsonString);
 console.log(person); // { name: "John", age: 30 }
+
 7. Date Methods
 new Date()
 Creates a new Date object representing the current date and time.
 
-javascript
- 
-#
+Example:
 let currentDate = new Date();
 console.log(currentDate); // Current date and time
+
 Date.prototype.getFullYear()
 Gets the year of a Date object.
 
-javascript
- 
-#
+Example:
 let currentDate = new Date();
 console.log(currentDate.getFullYear()); // 2025 (current year)
+
 Date.prototype.getMonth()
 Gets the month (0-11) of a Date object.
 
-javascript
- 
-#
+Example:
 let currentDate = new Date();
 console.log(currentDate.getMonth()); // 7 (August, because months are 0-indexed)
+
 8. Math Methods
 Math.max() / Math.min()
 Returns the largest or smallest value from a list of numbers.
 
-javascript
- 
-#
+Example:
 console.log(Math.max(1, 2, 3)); // 3
 console.log(Math.min(1, 2, 3)); // 1
+
 Math.random()
 Returns a random number between 0 and 1.
 
-javascript
- 
-#
+Example:
 console.log(Math.random()); // e.g., 0.349
+
 Math.floor() / Math.ceil() / Math.round()
 Rounds numbers to the nearest integer, always down (Math.floor()), up (Math.ceil()), or to the nearest integer (Math.round()).
 
-javascript
- 
-#
+Example:
 console.log(Math.floor(4.7)); // 4
 console.log(Math.ceil(4.1));  // 5
 console.log(Math.round(4.5)); // 5
 Math.pow()
 Raises a number to the power of another.
 
-javascript
- 
-#
+Example:
 console.log(Math.pow(2, 3)); // 8
+
+
 9. Promise Methods (Asynchronous Programming)
+
 Promise.resolve()
 Returns a Promise that is resolved with a given value.
 
-javascript
- 
-#
+Example:
 let promise = Promise.resolve(5);
 promise.then(value => console.log(value)); // 5
+
 Promise.reject()
 Returns a Promise that is rejected with a given reason.
 
-javascript
- 
-#
+Example:
 let promise = Promise.reject("Error");
 promise.catch(error => console.log(error));
+
